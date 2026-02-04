@@ -41,7 +41,8 @@ The rationale for the libraries I used were these:
 
 - ben-manes.caffeine: this is a direct upgrade from Guava's cache, which were one of the most popular. Caffeine is actively maintained
 and supported by default in spring-boot-starter-cache. Since it's simple API, I decided to use a local in-memory cache over Redis for simplicity. In a real scenario where availability
-is a must, I would make the application stateless and use an external in-memory cache.
+is a must, I would make the application stateless and use an external in-memory cache. Also, I would add testcontainers library
+and adapt the tests to use a real Redis instance and create a docker-compose.yaml file to help developers run the project locally.
 - lombok: very common on java projects. I use mainly with @Slf4j and @RequiredArgsConstructor on beans to facilitate injection by
 constructor, per spring best practices.
 - wiremock-spring-boot: wiremock is a library to mock APIs with a real HTTP server. It integrates well with spring
